@@ -1,7 +1,6 @@
 from selenium.webdriver.common.by import By
 
 class MainPageLocators:
-    COOKIE_BUTTON = (By.ID, 'rcc-confirm-button')
     FIRST_QUESTION = (By.ID, 'accordion__heading-0')
     SECOND_QUESTION = (By.ID, 'accordion__heading-1')
     THIRD_QUESTION = (By.ID, 'accordion__heading-2')

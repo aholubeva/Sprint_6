@@ -1,7 +1,7 @@
 from src.pages.main_page import MainPage
 from src.pages.main_page import MainPageLocators
-from src.config import Config
 import pytest
+import allure
 
 
 class TestImportantQuestions:
@@ -19,12 +19,12 @@ class TestImportantQuestions:
             (MainPageLocators.EIGHTH_QUESTION, MainPageLocators.EIGHTH_ANSWER)
         ]
     )
-
+    @allure.title('Проверка раскрытия вопроса из списка и появления соответствующего ответа')
     def test_expand_question(self, driver, question_number, answer_number):
         main_page = MainPage(driver)
-        main_page.navigate(Config.URL)
-        main_page.scroll_page()
-        main_page.cookie_button_click()
+        main_page.navigate_to_main_page()
+        main_page.scroll_page_to_questions()
+        main_page.cookie_button_click_on_main_page()
         assert main_page.check_question_and_answer(question_number, answer_number)
 
 
